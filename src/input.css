@@ -52,6 +52,13 @@ h1 {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 860px) and (orientation: landscape) {
+  h1 {
+    font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    line-height: clamp(1.2rem, 2.2vw + 1.2rem, 3.2rem);
+  }
+}
+
 h2 {
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
   line-height: clamp(2.4rem, 3.5vw + 0.75rem, 3.5rem);
@@ -313,7 +320,7 @@ tr:hover {
   width: 1rem;
   height: 1rem;
 
-  background-image: url("../public/svg/CheckBox.svg");
+  background-image: url("../public/svg/checkBox.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
