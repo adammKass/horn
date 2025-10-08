@@ -32,7 +32,12 @@ function closeMenu() {
   navbar.classList.remove("show");
   openMenuButton.classList.remove("hidden");
   openMenuButton.setAttribute("aria-expanded", "false");
-  navbar.setAttribute("inert", "");
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    navbar.setAttribute("inert", "");
+  } else {
+    navbar.removeAttribute("inert");
+  }
 }
 
 updateNavbar(media);

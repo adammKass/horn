@@ -56,11 +56,11 @@
     <!-- Navbar -->
 
     <nav
-      class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px]"
+      class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px]"
       id="navbar"
     >
       <div
-        class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4"
+        class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2"
       >
         <!-- Logo/home link -->
 
@@ -74,7 +74,7 @@
             alt="Home"
             width="98"
             height="40"
-            class="h-10 w-auto flex-shrink-0 hover:opacity-70 transition-opacity duration-300 ease-in-out"
+            class="h-10 landscape:h-8 w-auto flex-shrink-0 hover:opacity-70 transition-opacity duration-300 ease-in-out"
           />
         </a>
         <!-- Close menu button, only on mobile -->
@@ -100,8 +100,10 @@
             <li><a href="#pricing" class="navlink">Cenník</a></li>
             <li><a href="#instructors" class="navlink">Inštruktori</a></li>
             <li><a href="#reviews" class="navlink">Recenzie</a></li>
-            <li><a href="#gallery" class="navlink">Galéria</a></li>
-            <li><a href="#contact" class="button-cta mt-6">Kontakt</a></li>
+            <li><a href="#gallery" class="navlink mb-4 md:mb-0">Galéria</a></li>
+            <li>
+              <a href="#contact" class="button-cta md:mt-6">Kontakt</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -111,14 +113,14 @@
     <!-- Main Content Start, Hero Banner - full screen height on all devices -->
 
     <main id="main-content">
-      <section class="w-full h-screen hero-fabric relative">
+      <section class="w-full h-[100dvh] hero-fabric relative">
         <div
           class="section-inner flex flex-row items-start md:items-center justify-center md:justify-start"
         >
           <!-- Hero Image -->
           <div class="hero-bg z-0"></div>
           <div
-            class="flex flex-col gap-2 text-white md:max-w-1/3 z-20 mt-[20vh] md:mt-0 items-center md:items-start text-center md:text-left"
+            class="flex flex-col gap-2 text-white md:max-w-2/3 lg:max-w-1/3 z-20 mt-[20vh] md:mt-0 items-center md:items-start text-center md:text-left"
           >
             <!-- Hero text + CTA button -->
             <h1>
