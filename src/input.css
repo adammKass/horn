@@ -271,6 +271,17 @@ tr:hover {
   }
 }
 
+.hero-text {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 860px) and (orientation: landscape) {
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+}
+
 /* Equipment image */
 
 .equipment-bg {
@@ -284,7 +295,7 @@ tr:hover {
   background-image: url("../public/images/equipment.jpg");
   background-size: 1200px;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   clip-path: polygon(0 0, 30% 0, 50% 100%, 0% 100%);
 }
 
