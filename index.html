@@ -4,26 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hörn - boxerský ring Bratislava</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <link rel="stylesheet" href="/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="leaflet/dist/leaflet.css" />
     <!-- Map plugin import -->
-    <script src="/leaflet/dist/leaflet.js"></script>
-    <script src="/src/js/menu.js" defer></script>
+    <script src="leaflet/dist/leaflet.js"></script>
+    <script src="src/js/menu.js" defer></script>
     <link
       rel="icon"
       type="image/png"
-      href="/public/favicon/favicon-96x96.png"
+      href="public/favicon/favicon-96x96.png"
       sizes="96x96"
     />
-    <link rel="icon" type="image/svg+xml" href="/public/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/public/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="public/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/public/favicon/apple-touch-icon.png"
+      href="public/favicon/apple-touch-icon.png"
     />
     <meta name="apple-mobile-web-app-title" content="Hörn" />
-    <link rel="manifest" href="/public/favicon/site.webmanifest" />
+    <link rel="manifest" href="public/favicon/site.webmanifest" />
   </head>
   <body>
     <!-- Skip button -->
@@ -45,7 +45,7 @@
       aria-controls="navbar"
     >
       <img
-        src="/public/svg/menu.svg"
+        src="public/svg/menu.svg"
         alt="Open menu"
         height="36"
         width="36"
@@ -70,7 +70,7 @@
           class="w-fit mb-8 md:mb-0 flex-shrink-0"
         >
           <img
-            src="/public/svg/logo-name-short-horizontal.svg"
+            src="public/svg/logo-name-short-horizontal.svg"
             alt="Home"
             width="98"
             height="40"
@@ -85,7 +85,7 @@
             onclick="closeMenu()"
           >
             <img
-              src="/public/svg/close.svg"
+              src="public/svg/close.svg"
               alt="Close menu"
               width="36"
               height="36"
@@ -111,9 +111,7 @@
     <!-- Main Content Start, Hero Banner - full screen height on all devices -->
 
     <main id="main-content">
-      <section
-        class="w-full h-screen bg-[url('/public/images/hero-fabric.jpg')] bg-cover relative"
-      >
+      <section class="w-full h-screen hero-fabric relative">
         <div
           class="section-inner flex flex-row items-start md:items-center justify-center md:justify-start"
         >
@@ -141,10 +139,7 @@
 
       <!--Equipment section Start -->
 
-      <section
-        class="bg-[url('/public/images/hero-fabric.jpg')] bg-cover"
-        id="equipment"
-      >
+      <section class="hero-fabric" id="equipment">
         <div class="section-inner flex justify-end items-start">
           <div
             class="flex flex-col gap-4 text-white md:max-w-1/2 text-center md:text-left items-center md:items-start"
@@ -180,16 +175,13 @@
 
       <!--Training section Start, made for exactly 3 articles -->
 
-      <section
-        class="bg-[url('/public/images/hero-fabric.jpg')] bg-cover"
-        id="training"
-      >
+      <section class="hero-fabric" id="training">
         <div class="section-inner text-white">
           <h2 class="text-center md:text-left">Tréningové programy</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16 mt-4">
             <div class="training-card">
               <img
-                src="/public/svg/box.svg"
+                src="public/svg/box.svg"
                 alt="Martial arts icon"
                 width="170"
                 height="170"
@@ -202,7 +194,7 @@
                   pokročilých.
                 </p>
                 <a
-                  href="/public/schedule/group-training.html"
+                  href="public/schedule/group-training.html"
                   class="button-secondary mt-auto"
                 >
                   Zobraziť rozvrh
@@ -211,7 +203,7 @@
             </div>
             <div class="training-card">
               <img
-                src="/public/svg/energy.svg"
+                src="public/svg/energy.svg"
                 alt="Energy icon"
                 width="170"
                 height="170"
@@ -223,7 +215,7 @@
                   Kombinácia vlastnej váhy, náradia a intervalových metód.
                 </p>
                 <a
-                  href="/public/schedule/conditioning-training.html"
+                  href="public/schedule/conditioning-training.html"
                   class="button-secondary mt-auto"
                 >
                   Zobraziť rozvrh
@@ -232,7 +224,7 @@
             </div>
             <div class="training-card">
               <img
-                src="/public/svg/info.svg"
+                src="public/svg/info.svg"
                 alt="Information icon"
                 width="170"
                 height="170"
@@ -301,10 +293,7 @@
 
       <!--Instructors section Start, instructors can be added by adding instructor-card into instructor-container -->
 
-      <section
-        id="instructors"
-        class="bg-[url('/public/images/hero-fabric.jpg')] bg-cover"
-      >
+      <section id="instructors" class="hero-fabric">
         <div class="section-inner section-logo text-center md:text-left">
           <!-- Fitness centre about text -->
           <div class="flex flex-col gap-4 text-white md:max-w-1/2">
@@ -325,7 +314,7 @@
               <!-- Add instructors here -->
               <div class="instructor-card">
                 <img
-                  src="/public/images/instructor1.jpg"
+                  src="public/images/instructor1.jpg"
                   height="408"
                   width="275"
                   alt="Inštruktor boxu sediaci na stoličke"
@@ -340,7 +329,7 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="/public/images/instructor2.jpg"
+                  src="public/images/instructor2.jpg"
                   height="408"
                   width="275"
                   alt="Inštruktor boxu stojaci pred čiernym pozadím"
@@ -355,7 +344,7 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="/public/images/instructor3.jpg"
+                  src="public/images/instructor3.jpg"
                   height="408"
                   width="275"
                   alt="Inštruktor boxu stojaci vo fitness centre"
@@ -370,7 +359,7 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="/public/images/instructor4.jpg"
+                  src="public/images/instructor4.jpg"
                   height="408"
                   width="275"
                   alt="Inštruktorka boxu stojaca pred čiernym pozadím"
@@ -487,17 +476,14 @@
 
       <!--Gallery section Start, can add images by adding more a with img inside -->
 
-      <section
-        class="bg-[url('/public/images/hero-fabric.jpg')] bg-cover"
-        id="gallery"
-      >
+      <section class="hero-fabric" id="gallery">
         <div class="section-inner flex flex-col gap-3 md:gap-8">
           <h2 class="text-white text-center md:text-left">Galéria</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <!-- !Add images here! -->
-            <a href="/public/images/gallery1.jpg" target="new">
+            <a href="public/images/gallery1.jpg" target="new">
               <img
-                src="/public/images/gallery1.jpg"
+                src="public/images/gallery1.jpg"
                 alt="Two boxing opponents fighting in a ring"
                 width="370"
                 height="550"
@@ -505,18 +491,18 @@
               />
             </a>
 
-            <a href="/public/images/gallery2.jpg" target="new">
+            <a href="public/images/gallery2.jpg" target="new">
               <img
-                src="/public/images/gallery2.jpg"
+                src="public/images/gallery2.jpg"
                 alt="Boxer getting ready for a punch"
                 width="370"
                 height="550"
                 class="gallery-image"
               />
             </a>
-            <a href="/public/images/gallery3.jpg" target="new">
+            <a href="public/images/gallery3.jpg" target="new">
               <img
-                src="/public/images/gallery3.jpg"
+                src="public/images/gallery3.jpg"
                 alt="Low shot of boxer throwing a punch at the opponent"
                 width="370"
                 height="550"
@@ -568,7 +554,7 @@
                 ><img
                   width="24"
                   height="24"
-                  src="/public/svg/X.svg"
+                  src="public/svg/X.svg"
                   alt="X"
                   class="social-icon"
               /></a>
@@ -576,7 +562,7 @@
                 ><img
                   width="24"
                   height="24"
-                  src="/public/svg/Instagram.svg"
+                  src="public/svg/Instagram.svg"
                   alt="Instagram"
                   class="social-icon"
               /></a>
@@ -584,7 +570,7 @@
                 ><img
                   width="24"
                   height="24"
-                  src="/public/svg/YouTube.svg"
+                  src="public/svg/YouTube.svg"
                   alt="Youtube"
                   class="social-icon"
               /></a>
@@ -620,7 +606,7 @@
 
     <!--Scripts, starsLoop.js for calling stars in review cards, mapCall.js for initializing map in Contact section -->
 
-    <script src="/src/js/starsLoop.js"></script>
-    <script src="/src/js/mapCall.js"></script>
+    <script src="src/js/starsLoop.js"></script>
+    <script src="src/js/mapCall.js"></script>
   </body>
 </html>

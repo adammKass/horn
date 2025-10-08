@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 300 400 700;
 
-  src: url("/public/fonts/NunitoSans-VariableFont.ttf") format("truetype");
+  src: url("../public/fonts/NunitoSans-VariableFont.ttf") format("truetype");
 }
 
 @font-face {
@@ -20,7 +20,7 @@
   font-style: italic;
   font-weight: 300 400 700;
 
-  src: url("/public/fonts/NunitoSans-Italic-VariableFont.ttf")
+  src: url("../public/fonts/NunitoSans-Italic-VariableFont.ttf")
     format("truetype");
 }
 
@@ -242,13 +242,19 @@ tr:hover {
 
 /* HeroBanner image */
 
+.hero-fabric {
+  background-image: url("../public/images/hero-fabric.jpg");
+  background-size: 800px;
+  background-repeat: repeat;
+}
+
 .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100dvh;
-  background-image: url("/public/images/hero-banner.jpg");
+  background-image: url("../public/images/hero-banner.jpg");
   background-position: center;
   clip-path: polygon(66% 0, 100% 0, 100% 100%, 33% 100%);
 }
@@ -271,7 +277,7 @@ tr:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/public/images/equipment.jpg");
+  background-image: url("../public/images/equipment.jpg");
   background-size: 1200px;
   background-repeat: no-repeat;
   background-position: right;

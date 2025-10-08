@@ -1,4 +1,4 @@
-# Horn website
+# Hörn - responsive and accessible website
 
 This project showcases laning page of fictional fitness centre in Bratislava. Whole process - from wireframing, prototying to actual coding was done by me. If you're more interested in design process, please check out my behance post.
 
