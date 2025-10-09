@@ -3,7 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tréningy boxu, kondície a sily v profesionálnej posilňovni. Zlepši svoju techniku a prekroč vlastné hranice s našimi trénermi."
+    />
+
+    <!-- Open Graph for social media -->
+    <meta property="og:title" content="Boxing Gym – Tréningy boxu a kondície" />
+    <meta
+      property="og:description"
+      content="Tréningy boxu, kondície a sily v profesionálnej posilňovni. Zlepši techniku a prekroč svoje hranice."
+    />
+    <meta
+      property="og:image"
+      content="https://adammkass.github.io/horn/public/images/hero-banner.jpg"
+    />
+    <meta property="og:url" content="https://adammkass.github.io/horn/" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hörn Gym Bratislava" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Boxing Gym – Tréningy boxu a kondície"
+    />
+    <meta
+      name="twitter:description"
+      content="Tréningy boxu a kondície pre všetkých, ktorí chcú prekročiť svoje hranice."
+    />
+    <meta
+      name="twitter:image"
+      content="https://adammkass.github.io/horn/public/images/hero-banner.jpg"
+    />
     <title>Hörn - boxerský ring Bratislava</title>
+    <link rel="canonical" href="https://adammkass.github.io/horn/" />
     <link rel="stylesheet" href="src/output.css" />
     <link rel="stylesheet" href="leaflet/dist/leaflet.css" />
     <!-- Map plugin import -->
@@ -12,18 +47,69 @@
     <link
       rel="icon"
       type="image/png"
-      href="public/favicon/favicon-96x96.png"
+      href="assets/favicon/favicon-96x96.png"
       sizes="96x96"
     />
-    <link rel="icon" type="image/svg+xml" href="public/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="public/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="public/favicon/apple-touch-icon.png"
+      href="assets/favicon/apple-touch-icon.png"
     />
     <meta name="apple-mobile-web-app-title" content="Hörn" />
-    <link rel="manifest" href="public/favicon/site.webmanifest" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <link rel="preload" as="image" href="assets/images/hero-banner.webp" />
+    <link
+      rel="preload"
+      as="font"
+      href="assets/fonts/NunitoSans-VariableFont.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthClub",
+        "name": "Boxing Gym Bratislava",
+        "image": "https://adammkass.github.io/horn/public/images/hero-banner.jpg",
+        "@id": "https://adammkass.github.io/horn",
+        "url": "https://adammkass.github.io/horn",
+        "telephone": "+421 123 456 789",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Levická 123",
+          "addressLocality": "Bratislava",
+          "postalCode": "987 65",
+          "addressCountry": "SK"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "06:00",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "20:00"
+          }
+        ],
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.facebook.com/horn4",
+          "https://www.instagram.com/horn4"
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Skip button -->
@@ -45,8 +131,8 @@
       aria-controls="navbar"
     >
       <img
-        src="public/svg/menu.svg"
-        alt="Open menu"
+        src="./public/svg/menu.svg"
+        alt="Otvoriť navigáciu"
         height="36"
         width="36"
         class="w-[24px] aspect-square sm:w-[36px]"
@@ -58,6 +144,7 @@
     <nav
       class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px] md:landscape:-mt-[72px]"
       id="navbar"
+      role="navigation"
     >
       <div
         class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2 lg:landscape:py-4"
@@ -65,13 +152,13 @@
         <!-- Logo/home link -->
 
         <a
-          href="#"
+          href="./index.html"
           aria-current="page"
           class="w-fit mb-8 md:mb-0 flex-shrink-0"
         >
           <img
-            src="public/svg/logo-name-short-horizontal.svg"
-            alt="Home"
+            src="./assets/svg/logo-name-short-horizontal.svg"
+            alt="Logo fitness centra Hörn Gym – návrat na domovskú stránku"
             width="98"
             height="40"
             class="h-10 landscape:h-8 md:landscape:h-10 w-auto flex-shrink-0 hover:opacity-70 transition-opacity duration-300 ease-in-out"
@@ -85,8 +172,8 @@
             onclick="closeMenu()"
           >
             <img
-              src="public/svg/close.svg"
-              alt="Close menu"
+              src="./assets/svg/close.svg"
+              alt="Zavrieť menu"
               width="36"
               height="36"
             />
@@ -146,7 +233,7 @@
           <div
             class="flex flex-col gap-4 text-white md:max-w-1/2 text-center md:text-left items-center md:items-start"
           >
-            <h2 class="w-fit">Vybavenie</h2>
+            <h2 class="w-fit">Vybavenie pre Box</h2>
             <p>
               Naša posilňovňa je vybavená tak, aby si si u nás našiel všetko
               potrebné – či už prichádzaš kvôli boxu, kondícii alebo sile.
@@ -183,8 +270,8 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16 mt-4">
             <div class="training-card">
               <img
-                src="public/svg/box.svg"
-                alt="Martial arts icon"
+                src="assets/svg/box.svg"
+                alt="Ikona znázorňujúca bojové umenie – symbol pre skupinový tréning boxu"
                 width="170"
                 height="170"
               />
@@ -196,7 +283,7 @@
                   pokročilých.
                 </p>
                 <a
-                  href="public/schedule/group-training.html"
+                  href="assets/schedule/group-training.html"
                   class="button-secondary mt-auto"
                 >
                   Zobraziť rozvrh
@@ -205,8 +292,8 @@
             </div>
             <div class="training-card">
               <img
-                src="public/svg/energy.svg"
-                alt="Energy icon"
+                src="assets/svg/energy.svg"
+                alt="Ikona blesku – symbol kondičného a silového tréningu"
                 width="170"
                 height="170"
               />
@@ -217,7 +304,7 @@
                   Kombinácia vlastnej váhy, náradia a intervalových metód.
                 </p>
                 <a
-                  href="public/schedule/conditioning-training.html"
+                  href="assets/schedule/conditioning-training.html"
                   class="button-secondary mt-auto"
                 >
                   Zobraziť rozvrh
@@ -226,8 +313,8 @@
             </div>
             <div class="training-card">
               <img
-                src="public/svg/info.svg"
-                alt="Information icon"
+                src="assets/svg/info.svg"
+                alt="Ikona informácie – symbol individuálnych tréningov s trénerom"
                 width="170"
                 height="170"
               />
@@ -299,10 +386,10 @@
         <div class="section-inner section-logo text-center md:text-left">
           <!-- Fitness centre about text -->
           <div class="flex flex-col gap-4 text-white md:max-w-1/2">
-            <h2>Náš tím</h2>
+            <h2>Náš tím Hörn</h2>
             <p>
               Naši tréneri sú odborníci s bohatými skúsenosťami a vášňou pre
-              šport.Horn Gym vznikol z vášne pre box a funkčný tréning. Veríme,
+              šport. Horn Gym vznikol z vášne pre box a funkčný tréning. Veríme,
               že každý človek dokáže prekonať svoje limity – stačí disciplína,
               správne vedenie a motivujúce prostredie. Našim cieľom je budovať
               nielen fyzickú silu, ale aj psychickú odolnosť a sebavedomie.
@@ -310,16 +397,17 @@
           </div>
           <div class="flex flex-col">
             <h3 class="text-white uppercase font-light mt-6">
-              Naši inštruktori
+              Naši inštruktori boxu
             </h3>
             <div class="w-full mt-4 text-white instructor-container">
               <!-- Add instructors here -->
               <div class="instructor-card">
                 <img
-                  src="public/images/instructor1.jpg"
+                  src="assets/images/instructor-marek-horvath.webp"
                   height="408"
                   width="275"
-                  alt="Inštruktor boxu sediaci na stoličke"
+                  alt="Inštruktor boxu Marek 'Iron Fist' Horváth sedí na stoličke v boxerskej hale"
+                  loading="lazy"
                 />
                 <div class="instructor-card-content">
                   <h4>Marek "Iron Fist" Horváth</h4>
@@ -331,10 +419,11 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="public/images/instructor2.jpg"
+                  src="assets/images/instructor-peter-novak.webp"
                   height="408"
                   width="275"
-                  alt="Inštruktor boxu stojaci pred čiernym pozadím"
+                  alt="Kondičný tréner Peter Novák stojí pred tmavým pozadím"
+                  loading="lazy"
                 />
                 <div class="instructor-card-content">
                   <h4>Peter Novák</h4>
@@ -346,10 +435,11 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="public/images/instructor3.jpg"
+                  src="assets/images/instructor-tomas-kovac.webp"
                   height="408"
                   width="275"
-                  alt="Inštruktor boxu stojaci vo fitness centre"
+                  alt="Tréner Tomáš Kováč stojí vo fitness centre pri boxerskom vybavení"
+                  loading="lazy"
                 />
                 <div class="instructor-card-content">
                   <h4>Tomáš Kováč</h4>
@@ -361,10 +451,11 @@
               </div>
               <div class="instructor-card">
                 <img
-                  src="public/images/instructor4.jpg"
+                  src="assets/images/instructor-lucia-bartosova.webp"
                   height="408"
                   width="275"
-                  alt="Inštruktorka boxu stojaca pred čiernym pozadím"
+                  alt="Trénerka Lucia Bartošová pózuje pred čiernym pozadím"
+                  loading="lazy"
                 />
                 <div class="instructor-card-content">
                   <h4>Lucia Bartošová</h4>
@@ -421,54 +512,28 @@
             </div>
             <div class="review-card">
               <div class="star-container"></div>
-              <p>
-                "Vybavenie a prístup trénerov je na vysokej úrovni. Odporúčam
-              </p>
+              <p>"Spokojnosť, odporúčam"</p>
               <div>
-                <strong>- Peter M.</strong>
+                <strong>- Ivan A.</strong>
+                <span> (5/5)</span>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="star-container"></div>
+              <p>"Veľmi sa mi páči prístup všetkých trénerov."</p>
+              <div>
+                <strong>- Michal K.</strong>
                 <span> (5/5)</span>
               </div>
             </div>
             <div class="review-card">
               <div class="star-container"></div>
               <p>
-                "Vybavenie a prístup trénerov je na vysokej úrovni. Odporúčam
+                "Centrum ponúka prijateľné ceny za špičkové inštruktáže.
+                Odporúčam"
               </p>
               <div>
-                <strong>- Peter M.</strong>
-                <span> (5/5)</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
-              <p>
-                "Skvelé miesto na tréning! Profesionálni tréneri a priateľská
-                atmosféra ma vždy motivujú."
-              </p>
-              <div>
-                <strong>- Ján K.</strong>
-                <span> (5/5)</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
-              <p>
-                "Skvelé miesto na tréning! Profesionálni tréneri a priateľská
-                atmosféra ma vždy motivujú."
-              </p>
-              <div>
-                <strong>- Ján K.</strong>
-                <span> (5/5)</span>
-              </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
-              <p>
-                "Skvelé miesto na tréning! Profesionálni tréneri a priateľská
-                atmosféra ma vždy motivujú."
-              </p>
-              <div>
-                <strong>- Ján K.</strong>
+                <strong>- Tomáš K.</strong>
                 <span> (5/5)</span>
               </div>
             </div>
@@ -483,32 +548,47 @@
           <h2 class="text-white text-center md:text-left">Galéria</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <!-- !Add images here! -->
-            <a href="public/images/gallery1.jpg" target="new">
+            <a
+              href="assets/images/gallery-box-ring-match.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
-                src="public/images/gallery1.jpg"
-                alt="Two boxing opponents fighting in a ring"
+                src="assets/images/gallery-box-ring-match-min.webp"
+                alt="Dvaja boxeri bojujú v ringu počas tréningu"
                 width="370"
                 height="550"
                 class="gallery-image"
+                loading="lazy"
               />
             </a>
 
-            <a href="public/images/gallery2.jpg" target="new">
+            <a
+              href="assets/images/gallery-boxer-match.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
-                src="public/images/gallery2.jpg"
-                alt="Boxer getting ready for a punch"
+                src="assets/images/gallery-boxer-match-min.webp"
+                alt="Boxer sa pripravuje na úder počas tréningu v ringu"
                 width="370"
                 height="550"
                 class="gallery-image"
+                loading="lazy"
               />
             </a>
-            <a href="public/images/gallery3.jpg" target="new">
+            <a
+              href="assets/images/gallery-boxer-match-low.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
-                src="public/images/gallery3.jpg"
-                alt="Low shot of boxer throwing a punch at the opponent"
+                src="assets/images/gallery-boxer-match-low-min.webp"
+                alt="Záber zdola – boxer práve udiera svojho súpera"
                 width="370"
                 height="550"
                 class="gallery-image"
+                loading="lazy"
               />
             </a>
           </div>
@@ -556,31 +636,35 @@
                 ><img
                   width="24"
                   height="24"
-                  src="public/svg/X.svg"
-                  alt="X"
+                  src="assets/svg/X.svg"
+                  alt="Ikona sociálnej siete X – prejsť na profil Hörn Gym"
                   class="social-icon"
               /></a>
               <a href="#"
                 ><img
                   width="24"
                   height="24"
-                  src="public/svg/Instagram.svg"
-                  alt="Instagram"
+                  src="assets/svg/Instagram.svg"
+                  alt="Ikona Instagramu – sleduj nás na Instagrame"
                   class="social-icon"
               /></a>
               <a href="#"
                 ><img
                   width="24"
                   height="24"
-                  src="public/svg/YouTube.svg"
-                  alt="Youtube"
+                  src="assets/svg/YouTube.svg"
+                  alt="Ikona YouTube – pozri si naše videá a tréningy"
                   class="social-icon"
               /></a>
             </div>
           </div>
           <!-- Interactive map -->
           <div id="map">
-            <div id="map" class="w-96 h-96"></div>
+            <div
+              id="map"
+              aria-label="Interaktívna mapa polohy Hörn Gym v Bratislave"
+              class="w-96 h-96"
+            ></div>
           </div>
         </div>
       </section>
@@ -608,7 +692,7 @@
 
     <!--Scripts, starsLoop.js for calling stars in review cards, mapCall.js for initializing map in Contact section -->
 
-    <script src="src/js/starsLoop.js"></script>
-    <script src="src/js/mapCall.js"></script>
+    <script src="src/js/starsLoop.js" defer></script>
+    <script src="src/js/mapCall.js" defer></script>
   </body>
 </html>
