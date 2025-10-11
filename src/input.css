@@ -52,7 +52,7 @@ h1 {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 860px) and (orientation: landscape) {
+@media screen and (max-width: 920px) and (orientation: landscape) {
   h1 {
     font-size: clamp(1rem, 2vw + 1rem, 3rem);
     line-height: clamp(1.2rem, 2.2vw + 1.2rem, 3.2rem);
@@ -260,8 +260,9 @@ tr:hover {
   width: 100%;
   height: 100dvh;
   background-image: url("../assets/images/hero-box-bag.webp");
-  background-position: center;
-  clip-path: polygon(66% 0, 100% 0, 100% 100%, 33% 100%);
+  object-fit: cover;
+  background-position: right;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
 
   /* Zoom animation */
   animation: hero-zoom 20s ease-in-out infinite alternate;
@@ -527,16 +528,16 @@ tr:hover {
 
 .instructor-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(125px, 1fr));
   gap: 1rem;
 }
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
   .instructor-container {
     grid-template-columns: repeat(2, minmax(250px, 1fr));
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .instructor-container {
     grid-template-columns: repeat(1, minmax(250px, 1fr));
   }

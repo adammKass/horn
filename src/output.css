@@ -17,6 +17,7 @@
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --font-weight-light: 300;
+    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -399,6 +400,9 @@
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
@@ -628,6 +632,16 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
+  .lg\:mt-4 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:gap-2 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 2);
+    }
+  }
   .lg\:gap-6 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 6);
@@ -638,9 +652,24 @@
       margin-top: calc(40px * -1);
     }
   }
+  .landscape\:mt-1 {
+    @media (orientation: landscape) {
+      margin-top: calc(var(--spacing) * 1);
+    }
+  }
+  .landscape\:mt-6 {
+    @media (orientation: landscape) {
+      margin-top: calc(var(--spacing) * 6);
+    }
+  }
   .landscape\:h-8 {
     @media (orientation: landscape) {
       height: calc(var(--spacing) * 8);
+    }
+  }
+  .landscape\:gap-0 {
+    @media (orientation: landscape) {
+      gap: calc(var(--spacing) * 0);
     }
   }
   .landscape\:py-2 {
@@ -703,7 +732,7 @@ h1 {
   margin: 0;
   text-transform: uppercase;
 }
-@media screen and (max-width: 860px) and (orientation: landscape) {
+@media screen and (max-width: 920px) and (orientation: landscape) {
   h1 {
     font-size: clamp(1rem, 2vw + 1rem, 3rem);
     line-height: clamp(1.2rem, 2.2vw + 1.2rem, 3.2rem);
@@ -873,8 +902,9 @@ tr:hover {
   width: 100%;
   height: 100dvh;
   background-image: url("../assets/images/hero-box-bag.webp");
-  background-position: center;
-  clip-path: polygon(66% 0, 100% 0, 100% 100%, 33% 100%);
+  object-fit: cover;
+  background-position: right;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
   animation: hero-zoom 20s ease-in-out infinite alternate;
   transform-origin: center center;
 }
@@ -1081,15 +1111,15 @@ tr:hover {
 }
 .instructor-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(125px, 1fr));
   gap: 1rem;
 }
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
   .instructor-container {
     grid-template-columns: repeat(2, minmax(250px, 1fr));
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .instructor-container {
     grid-template-columns: repeat(1, minmax(250px, 1fr));
   }
