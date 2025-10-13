@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rozvrh boxerských a kondičných tréningov v Hörn Gym Bratislava. Pozrite si aktuálne časy, trénerov a úrovne tréningov."
+    />
+    <title>Rozvrh tréningov | Hörn Gym</title>
+
+    <link rel="stylesheet" href="../output.css" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/favicon/favicon.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Print styles (Tailwind compatible) -->
+    <style>
+      @media print {
+        body {
+          background: white !important;
+          color: black !important;
+        }
+        nav,
+        footer,
+        button,
+        .button-cta,
+        .button-secondary {
+          display: none !important;
+        }
+        a {
+          text-decoration: none !important;
+          color: black !important;
+        }
+        table {
+          border-color: black !important;
+        }
+        tr,
+        td,
+        th {
+          border-color: black !important;
+        }
+        .text-white {
+          color: black !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="skip-link absolute top-0 left-0 z-[9999] bg-primary text-white px-4 py-2 rounded-xl -translate-y-full focus:translate-y-0 transition-transform duration-300 ease-in-out"
+    >
+      Preskočiť na hlavný obsah
+    </a>
+
+    <!-- Open menu button, only on mobile -->
+
+    <button
+      id="open-menu-button"
+      class="cursor-pointer fixed top-4 right-4 z-50 md:hidden p-2 bg-primary rounded-full"
+      onclick="openMenu()"
+      aria-expanded="false"
+      aria-controls="navbar"
+    >
+      <img
+        src="../../assets/svg/menu.svg"
+        alt="Otvoriť navigáciu"
+        height="36"
+        width="36"
+        class="w-[24px] aspect-square sm:w-[36px]"
+      />
+    </button>
+
+    <!-- Navbar -->
+
+    <nav
+      class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px] md:landscape:-mt-[72px]"
+      id="navbar"
+      role="navigation"
+    >
+      <div
+        class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2 lg:landscape:py-4"
+      >
+        <!-- Logo/home link -->
+
+        <a
+          href="../../index.html"
+          aria-current="page"
+          class="w-fit mb-8 md:mb-0 flex-shrink-0"
+        >
+          <img
+            src="../../assets/svg/logo-name-short-horizontal.svg"
+            alt="Logo fitness centra Hörn Gym – návrat na domovskú stránku"
+            width="98"
+            height="40"
+            class="h-10 landscape:h-8 md:landscape:h-10 w-auto flex-shrink-0 hover:opacity-70 transition-opacity duration-300 ease-in-out"
+          />
+        </a>
+        <!-- Close menu button, only on mobile -->
+        <div class="relative w-full md:w-auto">
+          <button
+            id="close-menu-button"
+            class="absolute top-0 right-0 md:hidden p-2 cursor-pointer"
+            onclick="closeMenu()"
+          >
+            <img
+              src="../../assets/svg/close.svg"
+              alt="Zavrieť menu"
+              width="36"
+              height="36"
+            />
+          </button>
+          <!-- Navlinks -->
+          <ul
+            class="flex gap-2 lg:gap-6 text-white items-start md:items-center uppercase font-light mt-[15vh] md:mt-0"
+          >
+            <li>
+              <a href="../../index.html#equipment" class="navlink">Vybavenie</a>
+            </li>
+            <li>
+              <a href="../../index.html#training" class="navlink">Tréning</a>
+            </li>
+            <li>
+              <a href="../../index.html#pricing" class="navlink">Cenník</a>
+            </li>
+            <li>
+              <a href="../../index.html#instructors" class="navlink"
+                >Inštruktori</a
+              >
+            </li>
+            <li>
+              <a href="../../index.html#reviews" class="navlink">Recenzie</a>
+            </li>
+            <li>
+              <a href="../../index.html#gallery" class="navlink mb-4 md:mb-0"
+                >Galéria</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="button-cta md:mt-6">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="overlay" onclick="closeMenu()" aria-hidden="true"></div>
+
+    <!-- Main -->
+    <main id="main-content">
+      <section class="hero-fabric md:mt-[72px] text-white" id="gallery">
+        <div class="section-inner flex flex-col gap-3 md:gap-8">
+          <h1 class="text-white text-center md:text-left">Rozvrh</h1>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Box schedule -->
+            <section class="px-6" aria-labelledby="group-heading">
+              <h2 id="group-heading" class="mb-2">Skupinový box</h2>
+              <p class="mb-4">
+                Tréning zameraný na techniku, sparring a kondíciu. Vhodné pre
+                všetky úrovne.
+              </p>
+
+              <div class="overflow-x-auto rounded-xl">
+                <table class="min-w-full text-left border-collapse">
+                  <thead>
+                    <tr class="border-b border-white/10">
+                      <th class="py-2 px-3 font-semibold">Deň</th>
+                      <th class="py-2 px-3 font-semibold">Čas</th>
+                      <th class="py-2 px-3 font-semibold">Tréner</th>
+                      <th class="py-2 px-3 font-semibold">Úroveň</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Pondelok</td>
+                      <td class="py-2 px-3">18:00 – 19:30</td>
+                      <td class="py-2 px-3">Marek Horváth</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Všetci</span>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Streda</td>
+                      <td class="py-2 px-3">18:00 – 19:30</td>
+                      <td class="py-2 px-3">Marek Horváth</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Všetci</span>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Piatok</td>
+                      <td class="py-2 px-3">17:00 – 18:30</td>
+                      <td class="py-2 px-3">Peter Novák</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Stredne</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-2 px-3">Sobota</td>
+                      <td class="py-2 px-3">10:00 – 11:30</td>
+                      <td class="py-2 px-3">Marek Horváth</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Všetci</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-sm text-white mt-4">
+                * Prihlásenie cez rezervačný formulár je odporúčané. Príďte 10
+                minút pred začiatkom tréningu.
+              </p>
+            </section>
+
+            <!-- Conditioning schedule -->
+            <section class="px-6" aria-labelledby="cond-heading">
+              <h2 id="cond-heading" class="mb-2">Kondičný tréning</h2>
+              <p class="mb-4">
+                Funkčný tréning zameraný na vytrvalosť, silu a výbušnosť.
+                Využíva intervaly, náradie a váhu vlastného tela.
+              </p>
+
+              <div class="overflow-x-auto rounded-xl">
+                <table class="min-w-full text-left border-collapse">
+                  <thead>
+                    <tr class="">
+                      <th class="py-2 px-3 font-semibold">Deň</th>
+                      <th class="py-2 px-3 font-semibold">Čas</th>
+                      <th class="py-2 px-3 font-semibold">Tréner</th>
+                      <th class="py-2 px-3 font-semibold">Úroveň</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Pondelok</td>
+                      <td class="py-2 px-3">07:00 – 08:00</td>
+                      <td class="py-2 px-3">Ivana Pavlíková</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Začiatočníci</span>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Utorok</td>
+                      <td class="py-2 px-3">18:30 – 19:30</td>
+                      <td class="py-2 px-3">Peter Novák</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Stredne</span>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-white/10">
+                      <td class="py-2 px-3">Štvrtok</td>
+                      <td class="py-2 px-3">19:00 – 20:00</td>
+                      <td class="py-2 px-3">Ivana Pavlíková</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Všetci</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-2 px-3">Sobota</td>
+                      <td class="py-2 px-3">09:00 – 10:00</td>
+                      <td class="py-2 px-3">Peter Novák</td>
+                      <td class="py-2 px-3">
+                        <span class="text-primary">Všetci</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-sm text-white mt-4">
+                * Počet miest môže byť obmedzený, odporúčame rezerváciu.
+              </p>
+            </section>
+          </div>
+
+          <!-- Legend -->
+          <section>
+            <ul class="text-white/80">
+              <li>
+                <strong class="text-primary">Všetci</strong> – vhodné pre
+                začiatočníkov aj pokročilých.
+              </li>
+              <li>
+                <strong class="text-primary">Stredne</strong> – odporúčané pre
+                tých, ktorí majú základné skúsenosti.
+              </li>
+              <li>
+                <strong class="text-primary">Začiatočníci</strong> – pomalšie
+                tempo, dôraz na techniku.
+              </li>
+            </ul>
+          </section>
+          <a
+            href="../../index.html#training"
+            class="button-secondary self-center"
+          >
+            Späť na hlavnú stránku
+          </a>
+        </div>
+      </section>
+      <section class="bg-primary-dark" id="contact">
+        <div
+          class="section-inner text-white flex flex-col md:flex-row justify-between gap-8"
+        >
+          <div
+            class="flex flex-col gap-4 md:max-w-1/2 items-center md:items-start text-center md:text-left"
+          >
+            <!-- Contact Links -->
+            <h2 class="text-primary">Pridaj sa k nám</h2>
+            <div class="uppercase flex flex-col gap-2">
+              <span>Levická 123, 987 65 Bratislava</span>
+              <a
+                href="mailto:info@fitnesscentrum.sk"
+                class="transition-colors duration-300 ease-in-out hover:text-primary"
+                >info@fitnesscentrum.sk</a
+              >
+              <a
+                href="tel:+421123456789"
+                class="transition-colors duration-300 ease-in-out hover:text-primary"
+                >+421 123 456 789</a
+              >
+            </div>
+            <!-- Opening Hours -->
+            <h3 class="text-primary">Otváracie hodiny</h3>
+            <div class="uppercase flex flex-col gap-2">
+              <span>Pondelok - Piatok: 6:00 - 22:00</span>
+              <span>Sobota: 8:00 - 20:00</span>
+              <span>Nedeľa: Zatvorené</span>
+            </div>
+            <!-- Socials -->
+            <h3 class="text-primary">Sleduj nás</h3>
+            <div class="flex flex-row gap-6 items-center">
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="../../assets/svg/X.svg"
+                  alt="Ikona sociálnej siete X – prejsť na profil Hörn Gym"
+                  class="social-icon"
+              /></a>
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="../../assets/svg/Instagram.svg"
+                  alt="Ikona Instagramu – sleduj nás na Instagrame"
+                  class="social-icon"
+              /></a>
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="../../assets/svg/YouTube.svg"
+                  alt="Ikona YouTube – pozri si naše videá a tréningy"
+                  class="social-icon"
+              /></a>
+            </div>
+          </div>
+          <!-- Interactive map -->
+          <div id="map" class="rounded-lg">
+            <div
+              id="map"
+              aria-label="Interaktívna mapa polohy Hörn Gym v Bratislave"
+              class="w-96 h-96"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!--Footer -->
+
+      <footer class="w-full bg-gray-950 py-2">
+        <div
+          class="section-inner text-white flex flex-col sm:flex-row items-center md:items-start justify-between"
+        >
+          <p class="text-center text-sm">
+            &copy; 2024 Horn Gym. Všetky práva vyhradené.
+          </p>
+          <span class="text-sm"
+            >Designed by
+            <a
+              href=""
+              class="transition-colors duration-300 ease-in-out hover:text-primary"
+              >Adam Kaščák</a
+            ></span
+          >
+        </div>
+      </footer>
+    </main>
+
+    <script src="../js/mapCall.js" defer></script>
+  </body>
+</html>
