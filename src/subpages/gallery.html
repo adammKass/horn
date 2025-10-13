@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tréningy boxu, kondície a sily v profesionálnej posilňovni. Zlepši svoju techniku a prekroč vlastné hranice s našimi trénermi."
+    />
+    <title>Hörn - boxerský ring Bratislava - rozvrh</title>
+    <link rel="canonical" href="https://adammkass.github.io/horn/" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="stylesheet" href="/leaflet/dist/leaflet.css" />
+    <!-- Map plugin import -->
+    <script src="/leaflet/dist/leaflet.js"></script>
+    <script src="/src/js/menu.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Hörn" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Skip button -->
+
+    <a
+      href="#main-content"
+      class="skip-link absolute top-0 left-0 z-[9999] bg-primary text-white px-4 py-2 rounded-xl -translate-y-full focus:translate-y-0 transition-transform duration-300 ease-in-out"
+    >
+      Preskočiť na hlavný obsah
+    </a>
+
+    <!-- Open menu button, only on mobile -->
+
+    <button
+      id="open-menu-button"
+      class="cursor-pointer fixed top-4 right-4 z-50 md:hidden p-2 bg-primary rounded-full"
+      onclick="openMenu()"
+      aria-expanded="false"
+      aria-controls="navbar"
+    >
+      <img
+        src="/assets/svg/menu.svg"
+        alt="Otvoriť navigáciu"
+        height="36"
+        width="36"
+        class="w-[24px] aspect-square sm:w-[36px]"
+      />
+    </button>
+
+    <!-- Navbar -->
+
+    <nav
+      class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px] md:landscape:-mt-[72px]"
+      id="navbar"
+      role="navigation"
+    >
+      <div
+        class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2 lg:landscape:py-4"
+      >
+        <!-- Logo/home link -->
+
+        <a
+          href="/index.html"
+          aria-current="page"
+          class="w-fit mb-8 md:mb-0 flex-shrink-0"
+        >
+          <img
+            src="/assets/svg/logo-name-short-horizontal.svg"
+            alt="Logo fitness centra Hörn Gym – návrat na domovskú stránku"
+            width="98"
+            height="40"
+            class="h-10 landscape:h-8 md:landscape:h-10 w-auto flex-shrink-0 hover:opacity-70 transition-opacity duration-300 ease-in-out"
+          />
+        </a>
+        <!-- Close menu button, only on mobile -->
+        <div class="relative w-full md:w-auto">
+          <button
+            id="close-menu-button"
+            class="absolute top-0 right-0 md:hidden p-2 cursor-pointer"
+            onclick="closeMenu()"
+          >
+            <img
+              src="/assets/svg/close.svg"
+              alt="Zavrieť menu"
+              width="36"
+              height="36"
+            />
+          </button>
+          <!-- Navlinks -->
+          <ul
+            class="flex gap-2 lg:gap-6 text-white items-start md:items-center uppercase font-light mt-[15vh] md:mt-0"
+          >
+            <li>
+              <a href="/index.html#equipment" class="navlink">Vybavenie</a>
+            </li>
+            <li><a href="/index.html#training" class="navlink">Tréning</a></li>
+            <li><a href="/index.html#pricing" class="navlink">Cenník</a></li>
+            <li>
+              <a href="/index.html#instructors" class="navlink">Inštruktori</a>
+            </li>
+            <li><a href="/index.html#reviews" class="navlink">Recenzie</a></li>
+            <li>
+              <a href="/index.html#gallery" class="navlink mb-4 md:mb-0"
+                >Galéria</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="button-cta md:mt-6">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="overlay" onclick="closeMenu()" aria-hidden="true"></div>
+
+    <!-- Main Content Start, Hero Banner - full screen height on all devices -->
+
+    <main id="main-content">
+      <section class="hero-fabric mt-[72px]" id="gallery">
+        <div class="section-inner flex flex-col gap-3 md:gap-8">
+          <h2 class="text-white text-center md:text-left">Galéria</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+            <!-- !Add images here! -->
+            <a
+              href="/assets/images/gallery-box-ring-match.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/images/gallery-box-ring-match-min.webp"
+                alt="Dvaja boxeri bojujú v ringu počas tréningu"
+                width="370"
+                height="550"
+                class="gallery-image"
+                loading="lazy"
+              />
+            </a>
+
+            <a
+              href="/assets/images/gallery-boxer-match.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/images/gallery-boxer-match-min.webp"
+                alt="Boxer sa pripravuje na úder počas tréningu v ringu"
+                width="370"
+                height="550"
+                class="gallery-image"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href="/assets/images/gallery-boxer-match-low.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/images/gallery-boxer-match-low-min.webp"
+                alt="Záber zdola – boxer práve udiera svojho súpera"
+                width="370"
+                height="550"
+                class="gallery-image"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <a href="/index.html#gallery" class="button-secondary self-center">
+            Späť na hlavnú stránku
+          </a>
+        </div>
+      </section>
+
+      <!--Contact section Start -->
+
+      <section class="bg-primary-dark" id="contact">
+        <div
+          class="section-inner text-white flex flex-col md:flex-row justify-between gap-8"
+        >
+          <div
+            class="flex flex-col gap-4 md:max-w-1/2 items-center md:items-start text-center md:text-left"
+          >
+            <!-- Contact Links -->
+            <h2 class="text-primary">Pridaj sa k nám</h2>
+            <div class="uppercase flex flex-col gap-2">
+              <span>Levická 123, 987 65 Bratislava</span>
+              <a
+                href="mailto:info@fitnesscentrum.sk"
+                class="transition-colors duration-300 ease-in-out hover:text-primary"
+                >info@fitnesscentrum.sk</a
+              >
+              <a
+                href="tel:+421123456789"
+                class="transition-colors duration-300 ease-in-out hover:text-primary"
+                >+421 123 456 789</a
+              >
+            </div>
+            <!-- Opening Hours -->
+            <h3 class="text-primary">Otváracie hodiny</h3>
+            <div class="uppercase flex flex-col gap-2">
+              <span>Pondelok - Piatok: 6:00 - 22:00</span>
+              <span>Sobota: 8:00 - 20:00</span>
+              <span>Nedeľa: Zatvorené</span>
+            </div>
+            <!-- Socials -->
+            <h3 class="text-primary">Sleduj nás</h3>
+            <div class="flex flex-row gap-6 items-center">
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="/assets/svg/X.svg"
+                  alt="Ikona sociálnej siete X – prejsť na profil Hörn Gym"
+                  class="social-icon"
+              /></a>
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="/assets/svg/Instagram.svg"
+                  alt="Ikona Instagramu – sleduj nás na Instagrame"
+                  class="social-icon"
+              /></a>
+              <a href="#"
+                ><img
+                  width="24"
+                  height="24"
+                  src="/assets/svg/YouTube.svg"
+                  alt="Ikona YouTube – pozri si naše videá a tréningy"
+                  class="social-icon"
+              /></a>
+            </div>
+          </div>
+          <!-- Interactive map -->
+          <div id="map" class="rounded-lg">
+            <div
+              id="map"
+              aria-label="Interaktívna mapa polohy Hörn Gym v Bratislave"
+              class="w-96 h-96"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!--Footer -->
+
+      <footer class="w-full bg-gray-950 py-2">
+        <div
+          class="section-inner text-white flex flex-col sm:flex-row items-center md:items-start justify-between"
+        >
+          <p class="text-center text-sm">
+            &copy; 2024 Horn Gym. Všetky práva vyhradené.
+          </p>
+          <span class="text-sm"
+            >Designed by
+            <a
+              href=""
+              class="transition-colors duration-300 ease-in-out hover:text-primary"
+              >Adam Kaščák</a
+            ></span
+          >
+        </div>
+      </footer>
+    </main>
+
+    <!--Scripts, starsLoop.js for calling stars in review cards, mapCall.js for initializing map in Contact section -->
+
+    <script src="/src/js/mapCall.js" defer></script>
+  </body>
+</html>
