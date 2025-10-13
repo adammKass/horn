@@ -566,6 +566,11 @@
       margin-top: calc(var(--spacing) * 6);
     }
   }
+  .md\:mt-\[72px\] {
+    @media (width >= 48rem) {
+      margin-top: 72px;
+    }
+  }
   .md\:mb-0 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 0);
