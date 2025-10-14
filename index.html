@@ -44,6 +44,7 @@
     <!-- Map plugin import -->
     <script src="leaflet/dist/leaflet.js"></script>
     <script src="src/js/menu.js" defer></script>
+    <script src="src/js/observer.js" defer></script>
     <link
       rel="icon"
       type="image/png"
@@ -204,6 +205,7 @@
         class="w-full h-[100dvh] landscape:h-[100vh] hero-fabric relative"
       >
         <div
+          id="hero-banner"
           class="section-inner flex flex-row items-start md:items-center justify-center md:justify-start"
         >
           <!-- Hero Image -->
@@ -389,7 +391,10 @@
       <section id="instructors" class="hero-fabric">
         <div class="section-inner section-logo text-center md:text-left">
           <!-- Fitness centre about text -->
-          <div class="flex flex-col gap-4 text-white md:max-w-1/2">
+          <div
+            id="instructors-about"
+            class="flex flex-col gap-4 text-white md:max-w-1/2"
+          >
             <h2>Náš tím Hörn</h2>
             <p>
               Naši tréneri sú odborníci s bohatými skúsenosťami a vášňou pre
@@ -399,7 +404,7 @@
               nielen fyzickú silu, ale aj psychickú odolnosť a sebavedomie.
             </p>
           </div>
-          <div class="flex flex-col">
+          <div id="instructors-gallery" class="flex flex-col">
             <h3 class="text-white uppercase font-light mt-6">
               Naši inštruktori boxu
             </h3>
@@ -550,7 +555,10 @@
       <section class="hero-fabric" id="gallery">
         <div class="section-inner flex flex-col gap-3 md:gap-8">
           <h2 class="text-white text-center md:text-left">Galéria</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          <div
+            id="gallery-container"
+            class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8"
+          >
             <!-- !Add images here! -->
             <a
               href="assets/images/gallery-box-ring-match.webp"
