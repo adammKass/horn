@@ -331,8 +331,14 @@
   .min-w-full {
     min-width: 100%;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
+  }
+  .flex-grow {
+    flex-grow: 1;
   }
   .table-auto {
     table-layout: auto;
@@ -427,6 +433,9 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-white {
+    border-color: var(--color-white);
+  }
   .border-white\/10 {
     border-color: color-mix(in srgb, #fff 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -505,6 +514,12 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .not-italic {
+    font-style: normal;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -623,11 +638,6 @@
       max-width: calc(1/2 * 100%);
     }
   }
-  .md\:max-w-1\/3 {
-    @media (width >= 48rem) {
-      max-width: calc(1/3 * 100%);
-    }
-  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -682,6 +692,11 @@
   .lg\:mt-4 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:max-w-1\/3 {
+    @media (width >= 64rem) {
+      max-width: calc(1/3 * 100%);
     }
   }
   .lg\:grid-cols-2 {
@@ -789,7 +804,7 @@ h1 {
   margin: 0;
   text-transform: uppercase;
 }
-@media screen and (max-width: 920px) and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
   h1 {
     font-size: clamp(1rem, 2vw + 1rem, 3rem);
     line-height: clamp(1.2rem, 2.2vw + 1.2rem, 3.2rem);
@@ -831,7 +846,7 @@ section {
   border-radius: 0.25rem;
   color: white;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 .button-cta:hover {
   color: black;
@@ -887,7 +902,7 @@ section {
   display: none;
 }
 @media (max-width: 768px) {
-  nav {
+  header {
     position: fixed;
     top: 0;
     right: -100%;
@@ -899,13 +914,13 @@ section {
     align-items: center;
     transition: right 0.3s ease-in-out;
   }
-  nav.show {
+  header.show {
     right: 0;
   }
-  nav.show ~ #overlay {
+  header.show ~ #overlay {
     display: block;
   }
-  nav ul {
+  header ul {
     flex-direction: column;
     width: 100%;
   }
@@ -960,11 +975,15 @@ tr:hover {
   height: 100vh;
   background-image: url("../assets/images/hero-box-bag.webp");
   object-fit: cover;
-  background-position: right;
+  background-position: 70% 65%;
+}
+@media (max-width: 1024px) {
+  .hero-bg {
+    background-position: 70% 70%;
+  }
 }
 @media (max-width: 768px) {
   .hero-bg {
-    background-size: 1600px;
     background-position: 75% 5%;
   }
 }
@@ -977,6 +996,14 @@ tr:hover {
     line-height: 1.1rem;
   }
 }
+.desktop-break {
+  display: block;
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .desktop-break {
+    display: none;
+  }
+}
 .equipment-bg {
   position: absolute;
   inset: 0;
@@ -986,10 +1013,16 @@ tr:hover {
   width: 100%;
   height: 100%;
   background-image: url("../assets/images/equipment-box-ring.webp");
-  background-size: 1000px;
   object-fit: cover;
-  background-position: left;
+  background-size: 1400px;
+  background-position: right;
   clip-path: polygon(0 0, 30% 0, 50% 100%, 0% 100%);
+}
+@media (max-width: 1024px) {
+  .equipment-bg {
+    background-size: 1000px;
+    background-position: right;
+  }
 }
 @media (max-width: 768px) {
   .equipment-bg {
@@ -999,8 +1032,8 @@ tr:hover {
     margin-top: 1rem;
     aspect-ratio: 16/9;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    background-size: 1000px;
-    background-position: 25% 55%;
+    background-size: 800px;
+    background-position: 55% 55%;
   }
 }
 .equipment-listItem {
@@ -1206,7 +1239,7 @@ tr:hover {
 .section-logo::after {
   content: "";
   position: absolute;
-  background: url("assets/svg/logo.svg") no-repeat right 5% bottom 10% / 400px auto;
+  background: url("../assets/svg/logo.svg") no-repeat right 5% bottom 10% / 400px auto;
   opacity: 1;
   pointer-events: none;
   z-index: 20;
@@ -1226,6 +1259,11 @@ section h2 {
   opacity: 0;
   transition: 600ms ease;
 }
+.training-card {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: 600ms ease;
+}
 #hero-banner .hero-bg, #equipment .equipment-bg {
   transform: scale(1.1);
   transition: 3000ms ease;
@@ -1239,6 +1277,10 @@ section h2 {
   opacity: 1;
 }
 section.show h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+.training-card.show {
   transform: translateY(0);
   opacity: 1;
 }

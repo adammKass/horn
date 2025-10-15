@@ -16,7 +16,7 @@
     />
     <meta
       property="og:image"
-      content="https://adammkass.github.io/horn/public/images/hero-banner.jpg"
+      content="https://adammkass.github.io/horn/assets/images/hero-box-bag.webp"
     />
     <meta property="og:url" content="https://adammkass.github.io/horn/" />
     <meta property="og:type" content="website" />
@@ -35,7 +35,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://adammkass.github.io/horn/public/images/hero-banner.jpg"
+      content="https://adammkass.github.io/horn/assets/images/hero-box-bag.webp"
     />
     <title>Hörn - boxerský ring Bratislava</title>
     <link rel="canonical" href="https://adammkass.github.io/horn/" />
@@ -60,12 +60,12 @@
     />
     <meta name="apple-mobile-web-app-title" content="Hörn" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <link rel="preload" as="image" href="assets/images/hero-banner.webp" />
+    <link rel="preload" as="image" href="assets/images/hero-box-bag.webp" />
     <link
       rel="preload"
       as="font"
-      href="assets/fonts/NunitoSans-VariableFont.woff2"
-      type="font/woff2"
+      href="assets/fonts/NunitoSans-VariableFont.ttf"
+      type="font/trueType"
       crossorigin
     />
     <script type="application/ld+json">
@@ -142,21 +142,19 @@
 
     <!-- Navbar -->
 
-    <nav
+    <header
       class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px] md:landscape:-mt-[72px]"
-      id="navbar"
-      role="navigation"
+      id="header"
     >
-      <div
+      <nav
+        id="navbar"
         class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2 lg:landscape:py-4"
+        aria-label="Hlavná navigácia"
+        role="navigation"
       >
         <!-- Logo/home link -->
 
-        <a
-          href="#main-content"
-          aria-current="page"
-          class="w-fit mb-8 md:mb-0 flex-shrink-0"
-        >
+        <a href="#main-content" class="w-fit mb-8 md:mb-0 flex-shrink-0">
           <img
             src="./assets/svg/logo-name-short-horizontal.svg"
             alt="Logo fitness centra Hörn Gym – návrat na domovskú stránku"
@@ -194,14 +192,15 @@
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
     <div id="overlay" onclick="closeMenu()" aria-hidden="true"></div>
 
     <!-- Main Content Start, Hero Banner - full screen height on all devices -->
 
     <main id="main-content">
       <section
+        aria-label="Úvodná sekcia"
         class="w-full h-[100dvh] landscape:h-[100vh] hero-fabric relative"
       >
         <div
@@ -211,12 +210,12 @@
           <!-- Hero Image -->
           <div class="hero-bg z-0"></div>
           <div
-            class="flex flex-col gap-2 landscape:gap-0 lg:gap-2 text-white md:max-w-1/3 z-20 mt-[20vh] md:mt-0 items-center md:items-start text-center md:text-left landscape:mt-6"
+            class="flex flex-col gap-2 landscape:gap-0 lg:gap-2 text-white w-full lg:max-w-1/3 z-20 mt-[20vh] md:mt-0 items-center md:items-start text-center md:text-left landscape:mt-6"
           >
             <!-- Hero text + CTA button -->
             <h1>
-              Sila, <br />
-              Rýchlosť, <br />
+              Sila, <br class="desktop-break" />
+              Rýchlosť, <br class="desktop-break" />
               Disciplína
             </h1>
             <p class="hero-text text-lg md:text-xl">
@@ -234,7 +233,11 @@
 
       <!--Equipment section Start -->
 
-      <section class="hero-fabric" id="equipment">
+      <section
+        class="hero-fabric"
+        id="equipment"
+        aria-label="Vybavenie pre box"
+      >
         <div class="section-inner flex justify-end items-start">
           <div
             class="flex flex-col gap-4 text-white md:max-w-1/2 text-center md:text-left items-center md:items-start"
@@ -270,11 +273,15 @@
 
       <!--Training section Start, made for exactly 3 articles -->
 
-      <section class="hero-fabric" id="training">
+      <section
+        class="hero-fabric"
+        id="training"
+        aria-label="Tréningové programy"
+      >
         <div class="section-inner text-white">
           <h2 class="text-center md:text-left">Tréningové programy</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16 mt-4">
-            <div class="training-card">
+            <article class="training-card">
               <img
                 src="assets/svg/box.svg"
                 alt="Ikona znázorňujúca bojové umenie – symbol pre skupinový tréning boxu"
@@ -295,8 +302,8 @@
                   Zobraziť rozvrh
                 </a>
               </div>
-            </div>
-            <div class="training-card">
+            </article>
+            <article class="training-card">
               <img
                 src="assets/svg/energy.svg"
                 alt="Ikona blesku – symbol kondičného a silového tréningu"
@@ -316,8 +323,8 @@
                   Zobraziť rozvrh
                 </a>
               </div>
-            </div>
-            <div class="training-card">
+            </article>
+            <article class="training-card">
               <img
                 src="assets/svg/info.svg"
                 alt="Ikona informácie – symbol individuálnych tréningov s trénerom"
@@ -334,23 +341,23 @@
                   Rezervuj si termín
                 </a>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <!--Pricing section Start, table -->
 
-      <section id="pricing">
+      <section id="pricing" aria-label="Cenník">
         <div class="section-inner">
           <h2 class="text-center md:text-left">Cenník</h2>
           <table cellpadding="15" class="table-auto w-full my-8">
             <thead>
               <tr align="left" class="uppercase text-primary">
-                <th>Tréning / Vstup</th>
-                <th>Jednorázovo</th>
-                <th>Mesačný program</th>
-                <th>Zľavnené vstupné*</th>
+                <th scope="col">Tréning / Vstup</th>
+                <th scope="col">Jednorázovo</th>
+                <th scope="col">Mesačný program</th>
+                <th scope="col">Zľavnené vstupné*</th>
               </tr>
             </thead>
             <tbody>
@@ -388,7 +395,11 @@
 
       <!--Instructors section Start, instructors can be added by adding instructor-card into instructor-container -->
 
-      <section id="instructors" class="hero-fabric">
+      <section
+        id="instructors"
+        class="hero-fabric"
+        aria-label="Náš trénerský tím"
+      >
         <div class="section-inner section-logo text-center md:text-left">
           <!-- Fitness centre about text -->
           <div
@@ -410,7 +421,7 @@
             </h3>
             <div class="w-full mt-4 text-white instructor-container">
               <!-- Add instructors here -->
-              <div class="instructor-card">
+              <article class="instructor-card">
                 <img
                   src="assets/images/instructor-marek-horvath.webp"
                   height="408"
@@ -425,8 +436,8 @@
                     sparing.
                   </p>
                 </div>
-              </div>
-              <div class="instructor-card">
+              </article>
+              <article class="instructor-card">
                 <img
                   src="assets/images/instructor-peter-novak.webp"
                   height="408"
@@ -441,8 +452,8 @@
                     zameraný na výdrž a silu.
                   </p>
                 </div>
-              </div>
-              <div class="instructor-card">
+              </article>
+              <article class="instructor-card">
                 <img
                   src="assets/images/instructor-tomas-kovac.webp"
                   height="408"
@@ -457,8 +468,8 @@
                     vrcholný výkon.
                   </p>
                 </div>
-              </div>
-              <div class="instructor-card">
+              </article>
+              <article class="instructor-card">
                 <img
                   src="assets/images/instructor-lucia-bartosova.webp"
                   height="408"
@@ -473,7 +484,7 @@
                     boxe aj kondičnom cvičení.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
@@ -481,13 +492,13 @@
 
       <!--Reviews section Start, slideshow -->
 
-      <section id="reviews">
+      <section id="reviews" aria-label="Recenzie">
         <div class="section-inner flex flex-col gap-8">
           <h2 class="text-center md:text-left">Recenzie</h2>
 
           <div class="flex flex-row gap-4 review-container">
-            <div class="review-card">
-              <div class="star-container"></div>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <!-- Add reviews here -->
               <p>
                 "Skvelé miesto na tréning! Profesionálni tréneri a priateľská
@@ -497,9 +508,9 @@
                 <strong>- Ján K.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
+            </article>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <p>
                 "Profesionálni tréneri a skvelé vybavenie. Cítim sa tu ako
                 doma."
@@ -508,9 +519,9 @@
                 <strong>- Ivana P.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
+            </article>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <p>
                 "Vybavenie a prístup trénerov je na vysokej úrovni. Odporúčam
               </p>
@@ -518,25 +529,25 @@
                 <strong>- Peter M.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
+            </article>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <p>"Spokojnosť, odporúčam"</p>
               <div>
                 <strong>- Ivan A.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
+            </article>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <p>"Veľmi sa mi páči prístup všetkých trénerov."</p>
               <div>
                 <strong>- Michal K.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
-            <div class="review-card">
-              <div class="star-container"></div>
+            </article>
+            <article class="review-card">
+              <div class="star-container" aria-hidden="true"></div>
               <p>
                 "Centrum ponúka prijateľné ceny za špičkové inštruktáže.
                 Odporúčam"
@@ -545,14 +556,18 @@
                 <strong>- Tomáš K.</strong>
                 <span> (5/5)</span>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <!--Gallery section Start, can add images by adding more a with img inside -->
 
-      <section class="hero-fabric" id="gallery">
+      <section
+        class="hero-fabric"
+        id="gallery"
+        aria-label="Galéria boxerského centra"
+      >
         <div class="section-inner flex flex-col gap-3 md:gap-8">
           <h2 class="text-white text-center md:text-left">Galéria</h2>
           <div
@@ -615,7 +630,11 @@
 
       <!--Contact section Start -->
 
-      <section class="bg-primary-dark" id="contact">
+      <section
+        class="bg-primary-dark"
+        id="contact"
+        aria-label="Kontaktné informácie a mapa"
+      >
         <div
           class="section-inner text-white flex flex-col md:flex-row justify-between gap-8"
         >
@@ -624,7 +643,7 @@
           >
             <!-- Contact Links -->
             <h2 class="text-primary">Pridaj sa k nám</h2>
-            <div class="uppercase flex flex-col gap-2">
+            <address class="uppercase flex flex-col gap-2 not-italic">
               <span>Levická 123, 987 65 Bratislava</span>
               <a
                 href="mailto:info@fitnesscentrum.sk"
@@ -636,7 +655,7 @@
                 class="transition-colors duration-300 ease-in-out hover:text-primary"
                 >+421 123 456 789</a
               >
-            </div>
+            </address>
             <!-- Opening Hours -->
             <h3 class="text-primary">Otváracie hodiny</h3>
             <div class="uppercase flex flex-col gap-2">
@@ -674,10 +693,11 @@
             </div>
           </div>
           <!-- Interactive map -->
-          <div id="map" class="rounded-lg">
+          <div class="rounded-lg">
             <div
               id="map"
               aria-label="Interaktívna mapa polohy Hörn Gym v Bratislave"
+              role="application"
               class="w-96 h-96"
             ></div>
           </div>
@@ -686,7 +706,7 @@
 
       <!--Footer -->
 
-      <footer class="w-full bg-gray-950 py-2">
+      <footer class="w-full bg-gray-950 py-2" aria-label="Pätička stránky">
         <div
           class="section-inner text-white flex flex-col sm:flex-row items-center md:items-start justify-between"
         >
@@ -696,7 +716,9 @@
           <span class="text-sm"
             >Designed by
             <a
-              href=""
+              href="https://github.com/adammkass"
+              target="_blank"
+              rel="noopener"
               class="transition-colors duration-300 ease-in-out hover:text-primary"
               >Adam Kaščák</a
             ></span

@@ -52,7 +52,7 @@ h1 {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 920px) and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
   h1 {
     font-size: clamp(1rem, 2vw + 1rem, 3rem);
     line-height: clamp(1.2rem, 2.2vw + 1.2rem, 3.2rem);
@@ -104,7 +104,7 @@ section {
   border-radius: 0.25rem;
   color: white;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .button-cta:hover {
@@ -174,7 +174,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  nav {
+  header {
     position: fixed;
     top: 0;
     right: -100%;
@@ -187,15 +187,15 @@ section {
     transition: right 0.3s ease-in-out;
   }
 
-  nav.show {
+  header.show {
     right: 0;
   }
 
-  nav.show ~ #overlay {
+  header.show ~ #overlay {
     display: block;
   }
 
-  nav ul {
+  header ul {
     flex-direction: column;
     width: 100%;
   }
@@ -261,12 +261,17 @@ tr:hover {
   height: 100vh;
   background-image: url("../assets/images/hero-box-bag.webp");
   object-fit: cover;
-  background-position: right;
+  background-position: 70% 65%;
+}
+
+@media (max-width: 1024px) {
+  .hero-bg {
+    background-position: 70% 70%;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-bg {
-    background-size: 1600px;
     background-position: 75% 5%;
   }
 }
@@ -282,6 +287,16 @@ tr:hover {
   }
 }
 
+.desktop-break {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .desktop-break {
+    display: none;
+  }
+}
+
 /* Equipment image */
 
 .equipment-bg {
@@ -293,10 +308,17 @@ tr:hover {
   width: 100%;
   height: 100%;
   background-image: url("../assets/images/equipment-box-ring.webp");
-  background-size: 1000px;
   object-fit: cover;
-  background-position: left;
+  background-size: 1400px;
+  background-position: right;
   clip-path: polygon(0 0, 30% 0, 50% 100%, 0% 100%);
+}
+
+@media (max-width: 1024px) {
+  .equipment-bg {
+    background-size: 1000px;
+    background-position: right;
+  }
 }
 
 @media (max-width: 768px) {
@@ -307,8 +329,8 @@ tr:hover {
     margin-top: 1rem;
     aspect-ratio: 16/9;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    background-size: 1000px;
-    background-position: 25% 55%;
+    background-size: 800px;
+    background-position: 55% 55%;
   }
 }
 
@@ -574,8 +596,8 @@ tr:hover {
 .section-logo::after {
   content: "";
   position: absolute;
-  background: url("assets/svg/logo.svg") no-repeat right 5% bottom 10% / 400px
-    auto;
+  background: url("../assets/svg/logo.svg") no-repeat right 5% bottom 10% /
+    400px auto;
   opacity: 1;
   pointer-events: none;
   z-index: 20;
@@ -596,6 +618,12 @@ tr:hover {
 }
 
 section h2 {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: 600ms ease;
+}
+
+.training-card {
   transform: translateY(50%);
   opacity: 0;
   transition: 600ms ease;
@@ -626,6 +654,11 @@ section h2 {
 }
 
 section.show h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.training-card.show {
   transform: translateY(0);
   opacity: 1;
 }

@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Tréningy boxu, kondície a sily v profesionálnej posilňovni. Zlepši svoju techniku a prekroč vlastné hranice s našimi trénermi."
+      content="Galéria tréningov boxu, kondičných tréningov a sily v profesionálnej posilňovni v Bratislave."
     />
-    <title>Hörn - boxerský ring Bratislava - rozvrh</title>
-    <link rel="canonical" href="https://adammkass.github.io/horn/" />
+    <title>Rozvrh tréningov | Galéria</title>
+    <link
+      rel="canonical"
+      href="https://adammkass.github.io/horn/src/subpages/gallery.html"
+    />
     <link rel="stylesheet" href="../output.css" />
     <link rel="stylesheet" href="../../leaflet/dist/leaflet.css" />
     <!-- Map plugin import -->
@@ -64,21 +67,19 @@
 
     <!-- Navbar -->
 
-    <nav
+    <header
       class="bg-primary-dark w-full sticky top-0 z-[4000] -mt-[72px] landscape:-mt-[40px] md:landscape:-mt-[72px]"
-      id="navbar"
-      role="navigation"
+      id="header"
     >
-      <div
+      <nav
+        id="navbar"
         class="section-inner flex flex-col-reverse md:flex-row justify-between items-center py-4 landscape:py-2 lg:landscape:py-4"
+        aria-label="Hlavná navigácia"
+        role="navigation"
       >
         <!-- Logo/home link -->
 
-        <a
-          href="../../index.html"
-          aria-current="page"
-          class="w-fit mb-8 md:mb-0 flex-shrink-0"
-        >
+        <a href="../../index.html" class="w-fit mb-8 md:mb-0 flex-shrink-0">
           <img
             src="../../assets/svg/logo-name-short-horizontal.svg"
             alt="Logo fitness centra Hörn Gym – návrat na domovskú stránku"
@@ -128,12 +129,14 @@
               >
             </li>
             <li>
-              <a href="#contact" class="button-cta md:mt-6">Kontakt</a>
+              <a href="../../index.html#contact" class="button-cta md:mt-6"
+                >Kontakt</a
+              >
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
     <div id="overlay" onclick="closeMenu()" aria-hidden="true"></div>
 
     <!-- Main Content Start, Hero Banner - full screen height on all devices -->
@@ -208,7 +211,7 @@
           >
             <!-- Contact Links -->
             <h2 class="text-primary">Pridaj sa k nám</h2>
-            <div class="uppercase flex flex-col gap-2">
+            <address class="uppercase flex flex-col gap-2 not-italic">
               <span>Levická 123, 987 65 Bratislava</span>
               <a
                 href="mailto:info@fitnesscentrum.sk"
@@ -220,7 +223,7 @@
                 class="transition-colors duration-300 ease-in-out hover:text-primary"
                 >+421 123 456 789</a
               >
-            </div>
+            </address>
             <!-- Opening Hours -->
             <h3 class="text-primary">Otváracie hodiny</h3>
             <div class="uppercase flex flex-col gap-2">
@@ -258,10 +261,11 @@
             </div>
           </div>
           <!-- Interactive map -->
-          <div id="map" class="rounded-lg">
+          <div class="rounded-lg">
             <div
               id="map"
               aria-label="Interaktívna mapa polohy Hörn Gym v Bratislave"
+              role="application"
               class="w-96 h-96"
             ></div>
           </div>
@@ -270,7 +274,7 @@
 
       <!--Footer -->
 
-      <footer class="w-full bg-gray-950 py-2">
+      <footer class="w-full bg-gray-950 py-2" aria-label="Pätička stránky">
         <div
           class="section-inner text-white flex flex-col sm:flex-row items-center md:items-start justify-between"
         >
@@ -280,7 +284,9 @@
           <span class="text-sm"
             >Designed by
             <a
-              href=""
+              href="https://github.com/adammkass"
+              target="_blank"
+              rel="noopener"
               class="transition-colors duration-300 ease-in-out hover:text-primary"
               >Adam Kaščák</a
             ></span

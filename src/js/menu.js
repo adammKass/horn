@@ -1,6 +1,6 @@
 // Navbar Logic
 
-const navbar = document.getElementById("navbar");
+const navbar = document.getElementById("header");
 const openMenuButton = document.getElementById("open-menu-button");
 
 const media = window.matchMedia("(width) < 768px");
