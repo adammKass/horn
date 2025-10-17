@@ -331,14 +331,8 @@
   .min-w-full {
     min-width: 100%;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-  .flex-grow {
-    flex-grow: 1;
   }
   .table-auto {
     table-layout: auto;
@@ -433,9 +427,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-white {
-    border-color: var(--color-white);
-  }
   .border-white\/10 {
     border-color: color-mix(in srgb, #fff 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -517,9 +508,6 @@
   }
   .not-italic {
     font-style: normal;
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -841,25 +829,27 @@ section {
   padding-left: min(2rem, 8%);
 }
 .button-cta {
-  padding: 0.5rem 0.75em;
+  padding: 0.5rem 1.5rem;
   background-color: var(--color-primary);
   border-radius: 0.25rem;
   color: white;
   text-transform: uppercase;
   transition: all 0.4s ease;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
 }
 .button-cta:hover {
   color: black;
   transform: translateY(-4px);
   opacity: 0.9;
   transform: scale(1.05);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .button-cta:focus {
   border: 2px solid var(--color-primary-dark);
 }
 .button-secondary {
   width: fit-content;
-  padding: 0.5rem 0.75em;
+  padding: 0.5rem 1.5rem;
   border-color: var(--color-primary);
   border-width: 2px;
   border-style: solid;
@@ -1016,7 +1006,7 @@ tr:hover {
   object-fit: cover;
   background-size: 1400px;
   background-position: right;
-  clip-path: polygon(0 0, 30% 0, 50% 100%, 0% 100%);
+  clip-path: polygon(0 0, 40% 0, 50% 100%, 0% 100%);
 }
 @media (max-width: 1024px) {
   .equipment-bg {
@@ -1134,6 +1124,8 @@ tr:hover {
   cursor: auto;
 }
 .review-card {
+  position: relative;
+  overflow: hidden;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -1143,9 +1135,10 @@ tr:hover {
   @supports (color: color-mix(in lab, red, red)) {
     background-color: color-mix( in srgb, var(--color-primary-dark) 70%, transparent );
   }
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 2rem;
+  border-radius: 0.2rem;
   color: white;
+  clip-path: polygon(0 10%, 95% 10%, 100% 90%, 5% 90%);
 }
 .review-card::scroll-marker {
   content: "";
@@ -1165,6 +1158,16 @@ tr:hover {
   transform: translateY(-2px);
   opacity: 1;
 }
+.review-card::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease-in-out;
+}
 .review-card:hover {
   background-color: color-mix( in srgb, #271515 90%, transparent );
   @supports (color: color-mix(in lab, red, red)) {
@@ -1172,6 +1175,9 @@ tr:hover {
   }
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
+}
+.review-card:hover::after {
+  width: 100%;
 }
 @media (max-width: 768px) {
   .review-card {
@@ -1211,7 +1217,12 @@ tr:hover {
   max-width: 100%;
   aspect-ratio: 1/1.6;
   border-radius: 0.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
   object-fit: cover;
+}
+.instructor-card:hover img {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 1px var(--color-primary), 0 0 8px rgba(239, 68, 68, 0.25);
 }
 .instructor-card-content {
   display: flex;
